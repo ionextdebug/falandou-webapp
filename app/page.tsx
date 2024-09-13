@@ -12,7 +12,6 @@ export default function Home() {
               Falandou Play
             </h1>
             <p>Aprenda Inglês 100% on-line.</p>
-            <p>
               <ul className="p-2">
                 <li className="p-1 list-disc">
                   <b>Aprenda a falar</b> inglês com histórias incríveis.
@@ -37,7 +36,6 @@ export default function Home() {
                   contextualizadas.
                 </li>
               </ul>
-            </p>
             <p>
               <a
                 href="#"
