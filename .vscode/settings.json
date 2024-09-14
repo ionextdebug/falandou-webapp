@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "homepage",
-        "authentication"
+        "authentication",
+        "conventional-commits"
     ]
 }
