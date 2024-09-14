@@ -1,7 +1,7 @@
 import { SignupFormSchema, FormState } from "@/app/logic/lib/definitions";
-import { signinEmail } from "./signinEmail";
+import axios from "axios";
 
-export function signup(state: FormState, formData: FormData) {
+export function auth(state: FormState, formData: FormData) {
   const validatedFields = SignupFormSchema.safeParse({
     email: formData.get("email"),
   });
@@ -12,6 +12,10 @@ export function signup(state: FormState, formData: FormData) {
     };
   }
 
-  signinEmail({email: validatedFields.data.email});
-
+  axios
+    .get("/api/auth", {
+      params: {email: validatedFields.data.email}
+    })
+    .then((res) => console.log(res))
+    .catch((res) => console.info(res));
 }

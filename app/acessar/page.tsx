@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import { signup } from '@/app/logic/actions/auth';
+import { auth } from "@/app/logic/actions/auth";
 import Nav from "../shared/components/nav";
-import { useFormState } from 'react-dom';
+import { useFormState } from "react-dom";
 
 export default function Acessar() {
-  const [state, action] = useFormState(signup, undefined)
+  const [state, action] = useFormState(auth, undefined);
   return (
     <>
       <Nav />
@@ -28,18 +28,6 @@ export default function Acessar() {
             />
           </div>
           {state?.errors?.email && <p>{state.errors.email}</p>}
-          <div className="mb-5">
-              <ul className="list-disc">
-                <li>
-                  <b>
-                    Enviaremos o Código de Acesso para seu e-mail, verifique as
-                    suas mensagens (incluindo Spam e Lixo).
-                  </b>
-                </li>
-                <li>Não se preocupe, o cadastro é gratuito.</li>
-                <li>Ao clicar em &quot;Confirmar&quot; você aceita os Termos de Uso.</li>
-              </ul>
-          </div>
           <button
             type="submit"
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
