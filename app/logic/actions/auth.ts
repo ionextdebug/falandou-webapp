@@ -1,8 +1,8 @@
-import { SignupFormSchema, FormState } from "@/app/logic/lib/definitions";
+import { SignUpFormSchema, FormState } from "@/app/logic/lib/definitions";
 import axios from "axios";
 
-export function auth(state: FormState, formData: FormData) {
-  const validatedFields = SignupFormSchema.safeParse({
+export function createUser(state: FormState, formData: FormData) {
+  const validatedFields = SignUpFormSchema.safeParse({
     email: formData.get("email"),
   });
 
